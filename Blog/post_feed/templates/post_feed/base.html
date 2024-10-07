@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        {% block 'title' %}
+        Title
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <link rel="stylesheet" href="{% static 'post_feed/css/base.css'%}">
+
+    <div class="top-bar">
+        <a href="#"><img src="image1.jpg" alt="Image 1"></a>
+    </div>
+
+    <div class="content">
+        {% block 'body'%}
+            <h1>Welcome to Dark Template</h1>
+            <p>This is a sample content. You can modify it as needed.</p>
+        {% endblock %}
+    </div>
+
+</body>
+</html>

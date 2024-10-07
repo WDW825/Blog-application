@@ -1,0 +1,22 @@
+.message_box {
+        background-color: #f2f2f2;
+        width: 300px;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 10px;
+
+    }
+
+.author {
+    font-weight: bold;
+}
+
+.message {
+    margin-top: 10px;
+}
+
+.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }

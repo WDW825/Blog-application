@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    font-family: Arial, sans-serif;
+
+}
+
+.top-bar {
+    background-color: #555555;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.top-bar img {
+    margin: 0 10px;
+    height: 50px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

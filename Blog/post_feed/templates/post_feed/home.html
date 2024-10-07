@@ -1,0 +1,22 @@
+{% extends 'post_feed/base.html'%}
+{% load static %}
+
+{% block 'body' %}
+
+<link rel="stylesheet" href="{% static 'post_feed/css/post.css' %}">
+
+<div class="container">
+
+{% for post in post_list%}
+
+<div class="message_box">
+    <div class="author">{{post.author_name}}</div>
+    <div class="message">
+        {{post.text}}
+</div>
+
+{% endfor %}
+</div>
+
+
+{% endblock%}
