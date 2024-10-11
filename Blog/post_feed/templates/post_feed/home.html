@@ -5,18 +5,16 @@
 
 <link rel="stylesheet" href="{% static 'post_feed/css/post.css' %}">
 
-<div class="container">
+
 
 {% for post in post_list%}
-
+<div class="container">
 <div class="message_box">
-    <div class="author">{{post.author_name}}</div>
+    <div class="author">{{post.author}}</div>
     <div class="message">
-        {{post.text}}
+        {{post.post_text}}
+    </div>
 </div>
-
 {% endfor %}
-</div>
-
 
 {% endblock%}
