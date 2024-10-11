@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="{% static 'post_feed/css/base.css'%}">
 
     <div class="top-bar">
-        <a href="#"><img src="image1.jpg" alt="Image 1"></a>
+        <a href="{% url 'home'%}"><img src="{% static 'post_feed\img\home.png'%}"></a>
+        <a href="{% url 'create_post'%}"><img src="{% static 'post_feed\img\add.png'%}"></a>
     </div>
 
     <div class="content">
