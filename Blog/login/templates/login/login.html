@@ -1,0 +1,10 @@
+{% extends 'post_feed/base.html'%}
+
+{% block 'body'%}
+<form action="", method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" label="Логин">
+</form>
+<a href="{%url 'reg'%}">Регистрация</a>
+{% endblock %}
