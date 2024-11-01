@@ -9,7 +9,13 @@ body {
 .top-bar {
     background-color: #555555;
     padding: 10px 0;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-div {
+    margin-right: 40px;
 }
 
 .top-bar img {

@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import LoginForm, RegForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 
 def login_page(request):
@@ -13,6 +13,7 @@ def login_page(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
+                    return redirect('home')
                 else:
                     HttpResponse('Disabled account')
             else:
@@ -30,16 +31,19 @@ def login_page(request):
 def register_page(request):
     if request.method == 'POST':
         user_form = RegForm(request.POST)
-        #if user_form.is_valid():
-        new_user = user_form.save(commit=False)
-        new_user.set_password(user_form.cleaned_data['password'])
-        new_user.save()
-        return render(request, 'post_feed/home.html')
-        #else:
-            #return render(request, 'login/reg.html', {'form': user_form})
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            login(request, new_user)
+            return render(request, 'post_feed/home.html')
+        else:
+            return render(request, 'login/reg.html', {'form': user_form})
     else:
         user_form = RegForm()
 
     return render(request, 'login/reg.html', {'form': user_form})
 
-# Create your views here.
+def logout_page(request):
+    logout(request)
+    return redirect('home')

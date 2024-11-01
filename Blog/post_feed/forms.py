@@ -6,6 +6,6 @@ class PostForm(ModelForm):
 
     class Meta:
         model = Post
-        fields = ('author', 'post_date', 'post_text')
+        fields = ('post_text',)
 
 #TODO: author name must be taken from session

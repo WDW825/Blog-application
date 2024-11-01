@@ -6,16 +6,32 @@
 {% endblock %}
 
 
+
+
+{% block 'top-bar'%}
+    {% if user.is_authenticated %}
+        <div class="right-div">
+            {{user.username}}
+            <br>
+            <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+
 {% block 'body' %}
 
 <link rel="stylesheet" href="{% static 'post_feed/css/post.css' %}">
 
 
 
+
+
 {% for post in post_list%}
 <div class="container">
 <div class="message_box">
-    <div class="author">{{post.author}}</div>
+    <div class="author">{{post.author}}<br>{{post_date}}</div>
     <div class="message">
         {{post.post_text}}
     </div>

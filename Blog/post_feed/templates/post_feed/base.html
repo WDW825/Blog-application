@@ -15,9 +15,13 @@
     <link rel="stylesheet" href="{% static 'post_feed/css/base.css'%}">
 
     <div class="top-bar">
+        <div>
         <a href="{% url 'home'%}"><img src="{% static 'post_feed\img\home.png'%}"></a>
         <a href="{% url 'create_post'%}"><img src="{% static 'post_feed\img\add.png'%}"></a>
-        <a href="{% url 'login'%}"><img src="{% static 'post_feed\img\add.png'%}"></a>
+        <a href="{% url 'login'%}"><img src="{% static 'post_feed\img\user.png'%}"></a>
+        </div>
+        {% block 'top-bar' %}
+        {%endblock%}
     </div>
 
     <div class="content">

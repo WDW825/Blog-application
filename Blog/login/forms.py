@@ -14,6 +14,9 @@ class RegForm(ModelForm):
     class Meta:
         model = User
         fields = fields = ('username', 'email', 'password')
+        help_texts = {
+            'username': None,
+        }
 
     def clean_repeat_password(self):
         cd = self.cleaned_data

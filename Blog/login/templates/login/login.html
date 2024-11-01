@@ -1,6 +1,11 @@
 {% extends 'post_feed/base.html'%}
+{% load static %}
+
+
+
 
 {% block 'body'%}
+<link rel="stylesheet" href="{% static 'login/css/login.css'%}">
 <form action="", method="POST">
     {% csrf_token %}
     {{form}}
