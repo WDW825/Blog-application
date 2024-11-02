@@ -6,10 +6,11 @@
 
 {% block 'body'%}
 <link rel="stylesheet" href="{% static 'login/css/login.css'%}">
-<form action="", method="POST">
+
+<form action="" method="POST" class="form-container">
     {% csrf_token %}
     {{form}}
     <input type="submit" label="Логин">
+    <a href="{%url 'reg'%}">Регистрация</a>
 </form>
-<a href="{%url 'reg'%}">Регистрация</a>
 {% endblock %}

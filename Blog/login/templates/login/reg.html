@@ -1,7 +1,9 @@
 {% extends 'post_feed/base.html'%}
+{% load static %}
 
 {% block 'body'%}
-<form action="", method="POST">
+<link rel="stylesheet" href="{% static 'login/css/reg.css'%}">
+<form action="", method="POST" class="form-container">
     {% csrf_token %}
     {{form}}
     <input type="submit" label="Регистрация">

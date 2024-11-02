@@ -28,14 +28,16 @@
 
 
 
-{% for post in post_list%}
-<div class="container">
-<div class="message_box">
-    <div class="author">{{post.author}}<br>{{post_date}}</div>
-    <div class="message">
-        {{post.post_text}}
+{% for post in post_list %}
+    <div class="container">
+        <div class="message_box">
+            <div class="author">{{ post.author }}</div>
+            <div class="date">{{ post.post_date }}</div>
+            <div class="message">
+                {{ post.post_text }}
+            </div>
+        </div>
     </div>
-</div>
 {% endfor %}
 
 {% endblock%}
