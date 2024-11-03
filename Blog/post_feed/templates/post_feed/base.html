@@ -18,12 +18,21 @@
         <div>
         <a href="{% url 'home'%}"><img src="{% static 'post_feed\img\home.png'%}"></a>
         <a href="{% url 'create_post'%}"><img src="{% static 'post_feed\img\add.png'%}"></a>
-
         {% if not user.is_authenticated %}
             <a href="{% url 'login'%}"><img src="{% static 'post_feed\img\user.png'%}"></a>
         {% endif %}
-
         </div>
+
+        {% if user.is_authenticated %}
+            <div class="right-div">
+                {{user.username}}
+                <br>
+                <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+            </div>
+        {% endif %}
+
+
+
         {% block 'top-bar' %}
         {%endblock%}
     </div>

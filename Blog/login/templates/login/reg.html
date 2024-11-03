@@ -3,9 +3,12 @@
 
 {% block 'body'%}
 <link rel="stylesheet" href="{% static 'login/css/reg.css'%}">
-<form action="", method="POST" class="form-container">
+<form action="" method="POST" class="form-container">
     {% csrf_token %}
     {{form}}
     <input type="submit" label="Регистрация">
 </form>
 {% endblock %}
+
+
+

@@ -6,20 +6,6 @@
 {% endblock %}
 
 
-
-
-{% block 'top-bar'%}
-    {% if user.is_authenticated %}
-        <div class="right-div">
-            {{user.username}}
-            <br>
-            <a href="{% url 'logout' %}">Выйти из аккаунта</a>
-        </div>
-    {% endif %}
-{% endblock %}
-
-
-
 {% block 'body' %}
 
 <link rel="stylesheet" href="{% static 'post_feed/css/post.css' %}">

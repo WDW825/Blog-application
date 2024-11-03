@@ -7,9 +7,7 @@ from django.utils import timezone
 
 def home_page(request):
     post_list = Post.objects.all()
-    data = {'post_list': post_list,
-            'user': request.user
-            }
+    data = {'post_list': post_list}
     return render(request, 'post_feed/home.html', data)
 
 def post_form(request):
