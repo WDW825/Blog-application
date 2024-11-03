@@ -17,8 +17,9 @@
 {% for post in post_list %}
     <div class="container">
         <div class="message_box">
-            <div class="author">{{ post.author }}</div>
-            <div class="date">{{ post.post_date }}</div>
+            <div class="author">{{ post.author }} • {{ post.post_date }}</div>
+
+            <div class="post_name">{{ post.post_name }}</div>
             <div class="message">
                 {{ post.post_text }}
             </div>

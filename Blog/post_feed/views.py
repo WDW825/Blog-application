@@ -19,8 +19,12 @@ def post_form(request):
         form = PostForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            new_pos = Post(post_text=cd['post_text'], author=request.user.username, post_date=timezone.now())
-            new_pos.save()
+            new_post = Post(post_text=cd['post_text'],
+                           author=request.user.username,
+                           post_date=timezone.now(),
+                           post_name=cd['post_name']
+                           )
+            new_post.save()
             return redirect('home')
         else:
             return HttpResponse('Invalid form')
