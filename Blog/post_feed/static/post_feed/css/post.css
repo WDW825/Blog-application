@@ -12,6 +12,7 @@
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
+    word-wrap: break-word;
 }
 
 .date {
@@ -32,3 +33,8 @@
         flex-direction: column;
         align-items: center;
     }
+
+#post-link {
+    text-decoration: none;
+    color: inherit;
+}

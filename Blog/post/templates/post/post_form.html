@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block 'title' %}
-  Пост
+  Создание поста
 {% endblock %}
 
 
 {% block  'body' %}
-  <link rel="stylesheet" href="{% static 'post_feed/css/post_form.css'%}">
+  <link rel="stylesheet" href="{% static 'post/css/post_form.css'%}">
 
   <form action="." method="POST" class="form-container">
     {% csrf_token %}
