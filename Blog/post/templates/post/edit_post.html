@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block 'title' %}
-  Создание поста
+  Изменение поста
 {% endblock %}
 
 
@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="{% static 'post/css/post_form.css'%}">
 
   <form action="" method="POST" class="form-container">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Опубликовать">
+      {% csrf_token %}
+      {{form}}
+      <input type="hidden" name="post_id" value="{{post_id}}" />
+      <input type="submit" value="Опубликовать">
   </form>
 {% endblock %}
