@@ -1,0 +1,17 @@
+{% extends 'post_feed/base.html'%}
+{% load static %}
+
+{% block 'title' %}
+  Создание темы
+{% endblock %}
+
+
+{% block  'body' %}
+  <link rel="stylesheet" href="{% static 'post/css/post_form.css'%}">
+
+  <form action="" method="PATCH" class="form-container">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Опубликовать">
+  </form>
+{% endblock %}

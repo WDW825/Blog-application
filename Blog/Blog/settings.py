@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'post_feed',
     'login',
-    'post'
+    'post',
+    'theme'
 ]
 
 MIDDLEWARE = [
