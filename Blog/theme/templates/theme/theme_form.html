@@ -9,9 +9,9 @@
 {% block  'body' %}
   <link rel="stylesheet" href="{% static 'post/css/post_form.css'%}">
 
-  <form action="" method="PATCH" class="form-container">
+  <form action="" method="POST" class="form-container">
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Опубликовать">
+    <input type="submit" value="Создать">
   </form>
 {% endblock %}

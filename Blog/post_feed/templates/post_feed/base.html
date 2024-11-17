@@ -16,25 +16,30 @@
 
     <div class="top-bar">
         <div>
-        <a href="{% url 'home'%}"><img src="{% static 'post_feed\img\home.png'%}"></a>
-        <a href="{% url 'create_post'%}"><img src="{% static 'post_feed\img\add.png'%}"></a>
-        {% if not user.is_authenticated %}
-            <a href="{% url 'login'%}"><img src="{% static 'post_feed\img\user.png'%}"></a>
-        {% endif %}
+            <a href="{% url 'home'%}"><img src="{% static 'post_feed\img\home.png'%}"></a>
+            <a href="{% url 'theme_feed'%}"><img src="{% static 'post_feed\img\theme.png'%}"></a>
+            {% block 'top-bar-left' %}
+            {%endblock%}
         </div>
 
-        {% if user.is_authenticated %}
-            <div class="right-div">
-                {{user.username}}
-                <br>
-                <a href="{% url 'logout' %}">Выйти из аккаунта</a>
-            </div>
-        {% endif %}
+
+
+        <div class="right-div">
+            {% if user.is_authenticated %}
+                <div>
+                    {{user.username}}
+                    <br>
+                    <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+                </div>
+            {% else %}
+                <a href="{% url 'login'%}"><img src="{% static 'post_feed\img\user.png'%}"></a>
+            {% endif %}
+        </div>
 
 
 
-        {% block 'top-bar' %}
-        {%endblock%}
+
+
     </div>
 
     <div class="content">

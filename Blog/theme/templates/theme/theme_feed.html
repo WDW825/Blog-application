@@ -1,0 +1,33 @@
+{% extends 'post_feed/base.html'%}
+{% load static %}
+
+{% block 'title'%}
+    {{theme_name}}
+{% endblock %}
+
+{% block 'top-bar-left' %}
+    <a href="{% url 'theme_create'%}"><img src="{% static 'post_feed\img\add.png'%}"></a>
+{%endblock%}
+
+
+{% block 'body' %}
+
+<link rel="stylesheet" href="{% static 'post_feed/css/post.css' %}">
+
+
+
+
+
+{% for theme in theme_list %}
+    <a id="post-link" href="{{theme.theme_name}}">
+        <div class="container">
+            <div class="message_box">
+
+                <div class="post_name">{{theme.theme_name}}</div>
+
+            </div>
+        </div>
+    </a>
+{% endfor %}
+
+{% endblock%}

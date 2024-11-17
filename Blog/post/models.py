@@ -6,3 +6,6 @@ class Post(models.Model):
     post_name = models.CharField(max_length=300, default='')
     post_date = models.DateField()
     theme_id = models.ForeignKey('theme.Theme', on_delete=models.CASCADE, default='')
+
+
+#TODO: make function to generate proper post name for url
