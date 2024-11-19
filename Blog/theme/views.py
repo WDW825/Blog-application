@@ -49,11 +49,15 @@ def post_form(request, theme_name):
 
 def theme_create(request):
 
+    if not request.user.is_authenticated:
+        return redirect('login')
+
+
     if request.method == 'POST':
         theme_form = ThemeForm(request.POST)
         if theme_form.is_valid():
             cd = theme_form.cleaned_data
-            new_theme = Theme(theme_name=cd['theme_name'])
+            new_theme = Theme(theme_name=cd['theme_name'], theme_name_url=cd['theme_name_url'])
             new_theme.save()
             root = reverse('theme_home', kwargs={'theme_name': new_theme.theme_name})
             print(root)

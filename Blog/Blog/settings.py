@@ -71,7 +71,8 @@ DATABASES = {
         'NAME': 'blog_db',
         'USER': 'postgres',
         'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
+        #'HOST': 'db',
+        #uncomment for docker
         'PORT': '5432',
     }
 }
