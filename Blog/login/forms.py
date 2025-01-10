@@ -14,6 +14,9 @@ class RegForm(ModelForm):
     class Meta:
         model = User
         fields = fields = ('username', 'email', 'password')
+        widgets = {
+            'password': forms.PasswordInput
+        }
         help_texts = {
             'username': None,
         }

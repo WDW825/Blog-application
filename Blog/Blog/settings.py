@@ -69,9 +69,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog_db',
-        'USER': 'postgres',
+        'USER': 'admin',
         'PASSWORD': 'admin',
-        #'HOST': 'db',
+        'HOST': 'db',
         #uncomment for docker
         'PORT': '5432',
     }

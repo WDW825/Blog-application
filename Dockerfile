@@ -1,16 +1,17 @@
-# Используем официальный образ Python
-FROM python:3.10
+FROM python:3.10-slim
 
-# Устанавливаем переменные окружения
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Устанавливаем рабочую директорию
 WORKDIR /app
 
 COPY . .
 
-# Устанавливаем зависимости
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 #CMD ["sh", "-c", "cd /app/Blog && python manage.py runserver 0.0.0.0:8000"]
